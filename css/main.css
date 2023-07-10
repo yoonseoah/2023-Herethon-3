@@ -63,6 +63,10 @@
         margin: 2%;
         box-shadow: 0 0 5px black;
     }
+
+    .main_btn:active {
+        box-shadow: 7px 10px 4px #bfac00 inset;
+    }
 }
 
 @media all and (max-width: 360px) {
@@ -120,5 +124,9 @@
         border: none;
         margin: 2%;
         box-shadow: 0 0 5px black;
+    }
+
+    .main_btn:active {
+        box-shadow: 7px 10px 4px #bfac00 inset;
     }
 }
