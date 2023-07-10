@@ -1,0 +1,129 @@
+@font-face {
+    font-family: "PyeongChangPeace-Light";
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/PyeongChangPeace-Light.woff2")
+        format("woff2");
+    font-weight: 300;
+    font-style: normal;
+}
+
+html,
+body {
+    min-height: 100%;
+}
+
+body {
+    font-family: "PyeongChangPeace-Light";
+    background-color: #1d0090;
+    background-image: url("/media/back_e.png");
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background-size: 75%;
+}
+
+.join_box {
+    margin-left: 36%;
+    margin-right: 36%;
+    margin-top: 4%;
+    width: 28%;
+    background-color: rgba(255, 255, 255, 0.7);
+    border: none;
+    border-radius: 10px;
+}
+
+#back {
+    margin-top: 3%;
+    margin-left: 2%;
+    width: 10%;
+    height: 10%;
+}
+
+#logo {
+    width: 34%;
+    margin-left: 33%;
+    margin-right: 33%;
+}
+
+.input {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 15%;
+    margin-right: 15%;
+    padding-bottom: 10%;
+}
+
+#name {
+    background-color: #ffffff;
+    background-image: url("/media/ch_g.png");
+    background-repeat: no-repeat;
+    background-position: 95%;
+    background-size: 13%;
+    border: none;
+    border-radius: 10px;
+    padding: 6%;
+    margin: 0% 8% 0% 8%;
+}
+
+#id {
+    background-color: #ffffff;
+    background-image: url("/media/ch_g.png");
+    background-repeat: no-repeat;
+    background-position: 95%;
+    background-size: 13%;
+    border: none;
+    border-radius: 10px;
+    padding: 5.5%;
+    margin: 3% 8% 0% 8%;
+}
+
+#mail {
+    background-color: #ffffff;
+    background-image: url("/media/ch_g.png");
+    background-repeat: no-repeat;
+    background-position: 95%;
+    background-size: 13%;
+    border: none;
+    border-radius: 10px;
+    padding: 5.5%;
+    margin: 3% 8% 0% 8%;
+}
+
+#pass1 {
+    background-color: #ffffff;
+    background-image: url("/media/ch_g.png");
+    background-repeat: no-repeat;
+    background-position: 95%;
+    background-size: 13%;
+    border: none;
+    border-radius: 10px;
+    padding: 5.5%;
+    margin: 3% 8% 0% 8%;
+}
+
+#pass2 {
+    background-color: #ffffff;
+    background-image: url("/media/ch_g.png");
+    background-repeat: no-repeat;
+    background-position: 95%;
+    background-size: 13%;
+    border: none;
+    border-radius: 10px;
+    padding: 5.5%;
+    margin: 3% 8% 0% 8%;
+}
+
+#join {
+    background-color: #ffe500;
+    border: none;
+    border-radius: 10px;
+    padding: 5.8%;
+    margin: 3% 8% 3% 8%;
+    font-family: "PyeongChangPeace-Light";
+    font-size: large;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25);
+}
+
+input::placeholder {
+    font-family: "PyeongChangPeace-Light";
+    font-size: medium;
+}
