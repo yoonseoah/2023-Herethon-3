@@ -80,6 +80,10 @@ body {
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25);
 }
 
+#log:active {
+    box-shadow: 7px 10px 4px #bfac00 inset;
+}
+
 input::placeholder {
     font-family: "PyeongChangPeace-Light";
     font-size: medium;
