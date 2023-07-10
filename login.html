@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>로그인</title>
+        <link href="./css/login.css" rel="stylesheet" />
+        <!--{% './css/login.css' %}-->
+    </head>
+    <body>
+        <div class="login_box">
+            <img src="./media/back.png" id="back" onclick="goBack()" /><br />
+            <!--{% './media/back.png' %}-->
+            <img src="./media/logo.png" id="logo" />
+            <!--{% './media/logo.png' %}-->
+            <form class="input">
+                <input type="text" placeholder="ID" id="id" />
+                <input type="password" placeholder="password" id="pass" />
+                <input type="submit" value="로그인" id="log" />
+                <div class="tojoin">
+                    아직 회원이 아니신가요?
+                    <a href="join.html" id="go">회원가입</a>
+                    <!--{% 'join.html' %}-->
+                </div>
+            </form>
+        </div>
+        <script>
+            function goBack() {
+                window.location.href = "main.html";
+            }
+            //{% 'main' %}
+        </script>
+    </body>
+</html>
