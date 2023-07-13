@@ -1,0 +1,51 @@
+{% load static %}
+{% load ratings %}
+{% load test1.star_widget_test %}
+<html>
+
+<form action="{% url 'test1:create' %}" method="post">
+    {% csrf_token %}
+    <h1> create.html 파일 </h1>
+
+    <h1>Todo 등록</h1>
+    <label for="title">제목</label>
+    <input type="text" name="title" /> <br/> <br />
+
+    <label for="content">본문</label>
+    <textarea name="content" id="" cols="30" rows="10"></textarea>
+    <input type="submit" value="제출" />
+
+    <input type="rating" name="grade" value="4" required="" id="id_grade" min="0" max="5" step="1" style="display: none;">
+    </input>
+
+    <input type="rating" name="star_danger" value="4" required="" id="id_grade" min="0" max="5" step="1" />
+    <!-- 별모양으로 어떻게 받지 ??  -->
+
+    <!-- 방법 1 -->
+    <!-- 별점 기능 .. 안 나온다.-->
+
+    <link rel="stylesheet" href="{% static 'widgets/rateit/rateit.css' %}">
+    <script
+        src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous">
+    </script>
+    <script 
+        src="{% static 'widgets/rateit/jquery.rateit.min.js' %}" />
+    </script>
+    <!-- {{ form.media }} -->
+    <div id="star_{{ widget.attrs.id }}" class="rateit" data-rateit-backingfld="#{{ widget.attrs.id }}"></div>
+
+    
+    <!-- 방법 2 -->
+    <link rel="stylesheet" href="{% static 'star-ratings/css/star-ratings.css' %}">
+    <script type="text/javascript" src="{% static 'star-ratings/js/dist/star-ratings.min.js' %}"></script>
+
+
+    <!-- 방법 1 처럼 위젯을 이용. 다른 방법으로 불러오기  -->
+
+
+
+</form>
+
+</html>
