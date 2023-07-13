@@ -9,10 +9,17 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
+<<<<<<< HEAD
 import os
 from pathlib import Path
 
 
+=======
+
+import os
+from pathlib import Path
+
+>>>>>>> 713bf834585d063a0649dcd4c5599f6ec25df72c
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -33,23 +40,36 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'user',
+<<<<<<< HEAD
     'django.contrib.sites',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.kakao',
+=======
+>>>>>>> 713bf834585d063a0649dcd4c5599f6ec25df72c
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+<<<<<<< HEAD
 ]
 
 # 로그인
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
     'allauth.account.auth_backends.AuthenticationBackend',
+=======
+    'test1',    # 별점기능  admin 에서만 가능
+    'test2',    # 별점 기능 admin에서만 가능
+    'star_ratings',     # 별점 python module
+    'test3',    # 별점기능... 제발 이번에는.
+    
+    'test4', # 별점 기능..
+    
+>>>>>>> 713bf834585d063a0649dcd4c5599f6ec25df72c
 ]
 
 MIDDLEWARE = [
@@ -67,12 +87,20 @@ ROOT_URLCONF = 'starprj.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
+<<<<<<< HEAD
         'DIRS': [],
+=======
+        'DIRS': [],     # 이거 수정하면 오류가 나오.. html 파일 인식을 못합니다. 
+>>>>>>> 713bf834585d063a0649dcd4c5599f6ec25df72c
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
+<<<<<<< HEAD
+=======
+                # 'django.core.context_processors.request', # TEMPLATE_CONTEXT_PROCESSORS 하위에 적으면 된다고 하는데, 그게 없어서 대신 여기에.
+>>>>>>> 713bf834585d063a0649dcd4c5599f6ec25df72c
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
@@ -80,7 +108,10 @@ TEMPLATES = [
     },
 ]
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 713bf834585d063a0649dcd4c5599f6ec25df72c
 WSGI_APPLICATION = 'starprj.wsgi.application'
 
 
@@ -131,11 +162,19 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+<<<<<<< HEAD
+=======
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static')
+]
+
+>>>>>>> 713bf834585d063a0649dcd4c5599f6ec25df72c
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+<<<<<<< HEAD
 # 미디어
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
@@ -173,3 +212,11 @@ ACCOUNT_LOGOUT_ON_GET = True
 #ACCOUNT_UNIQUE_EMAIL = True
 #ACCOUNT_USERNAME_REQUIRED = False
 #ACCOUNT_USER_MODEL_USERNAME_FILED = None
+=======
+
+# 별점 기능 설정
+    
+STAR_RATINGS_RERATE_SAME_DELETE = True  # 사용자가 동일 점수 클릭해 등급 삭제 가능
+# STAR_RATINGS_RATING_MODEL = 'tes1/Rate'
+# STAR_RATINGS_CLEARABLE = True           # 사용자가 지우기 버튼을 눌러서 등급삭제가능
+>>>>>>> 713bf834585d063a0649dcd4c5599f6ec25df72c

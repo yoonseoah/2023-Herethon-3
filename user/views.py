@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 
@@ -65,3 +66,8 @@ def change_password(request):
 
     return render(request, 'user/change-pw.html', {'form':form})
 
+=======
+from django.shortcuts import render
+
+# Create your views here.
+>>>>>>> 713bf834585d063a0649dcd4c5599f6ec25df72c

@@ -28,7 +28,11 @@ def _deactivate(args):
 _deactivate(["nondestructive"])
 aliases["deactivate"] = _deactivate
 
+<<<<<<< HEAD
 $VIRTUAL_ENV = r"C:\herethon3\venv"
+=======
+$VIRTUAL_ENV = r"C:\Herethon\venv"
+>>>>>>> 713bf834585d063a0649dcd4c5599f6ec25df72c
 
 $_OLD_VIRTUAL_PATH = $PATH
 $PATH = $PATH[:]
