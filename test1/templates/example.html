@@ -1,0 +1,17 @@
+{% load static %}
+
+{% load ratings %}
+
+{% ratings object_list %}
+
+
+<html>
+    <h1>example.html </h1>
+
+{% for item in object_list %}
+    {{ item.name }} and {{ item.ratings }}
+    <link rel="stylesheet" href="{% static 'star-ratings/css/star-ratings.css' %}">
+    <script type="text/javascript" src="{% static 'star-ratings/js/dist/star-ratings.min.js' %}"></script>
+    
+{% endfor %}
+</html>

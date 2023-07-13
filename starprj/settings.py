@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -38,6 +39,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'test1',    # 별점기능  admin 에서만 가능
+    'test2',    # 별점 기능 admin에서만 가능
+    'star_ratings',     # 별점 python module
+    'test3',    # 별점기능... 제발 이번에는.
+    
 ]
 
 MIDDLEWARE = [
@@ -55,12 +61,13 @@ ROOT_URLCONF = 'starprj.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [],     # 이거 수정하면 오류가 나오.. html 파일 인식을 못합니다. 
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
+                # 'django.core.context_processors.request', # TEMPLATE_CONTEXT_PROCESSORS 하위에 적으면 된다고 하는데, 그게 없어서 대신 여기에.
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
@@ -104,7 +111,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ko-kr'
 
 TIME_ZONE = 'Asia/Seoul'
 
@@ -122,3 +129,10 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# 별점 기능 설정
+    
+STAR_RATINGS_RERATE_SAME_DELETE = True  # 사용자가 동일 점수 클릭해 등급 삭제 가능
+# STAR_RATINGS_RATING_MODEL = 'tes1/Rate'
+# STAR_RATINGS_CLEARABLE = True           # 사용자가 지우기 버튼을 눌러서 등급삭제가능
