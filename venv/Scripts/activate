@@ -44,7 +44,11 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
+<<<<<<< HEAD
+VIRTUAL_ENV='C:\herethon3\venv'
+=======
 VIRTUAL_ENV='C:\Herethon\venv'
+>>>>>>> 713bf834585d063a0649dcd4c5599f6ec25df72c
 if ([ "$OSTYPE" = "cygwin" ] || [ "$OSTYPE" = "msys" ]) && $(command -v cygpath &> /dev/null) ; then
     VIRTUAL_ENV=$(cygpath -u "$VIRTUAL_ENV")
 fi
