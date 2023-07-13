@@ -1,5 +1,6 @@
 {% load static %}
 {% load ratings %}
+{% load test1.star_widget_test %}
 <html>
 
 <form action="{% url 'test1:create' %}" method="post">
@@ -35,9 +36,15 @@
     <!-- {{ form.media }} -->
     <div id="star_{{ widget.attrs.id }}" class="rateit" data-rateit-backingfld="#{{ widget.attrs.id }}"></div>
 
+    
     <!-- 방법 2 -->
     <link rel="stylesheet" href="{% static 'star-ratings/css/star-ratings.css' %}">
     <script type="text/javascript" src="{% static 'star-ratings/js/dist/star-ratings.min.js' %}"></script>
+
+
+    <!-- 방법 1 처럼 위젯을 이용. 다른 방법으로 불러오기  -->
+
+
 
 </form>
 

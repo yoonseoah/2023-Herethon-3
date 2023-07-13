@@ -62,6 +62,18 @@ def delete(request, id):
     return redirect("index")
 
 
+#* Review 모델에 대한 정보를 가져와 HTML 페이지에 전달
+    #^ 지민 수정 ) -> 점수는 뜨는데 별모양으로 안 뜬다. 
+
+def review_list(request):
+    reviews = Review.objects.all()
+    # return render(request, 'review_list.html', {'reviews': reviews})
+    return render(request, 'mypage.html', {'reviews': reviews})
+
+
+
+
+
 #* 방법 2 시도..
 def main_view(request):
     obj = Review.objects.filter(score=0).order_by("?").first()
