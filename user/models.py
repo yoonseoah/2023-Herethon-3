@@ -48,7 +48,6 @@ class User(AbstractBaseUser, PermissionsMixin):
     date_joined = models.DateTimeField(default=timezone.now)
     updated_at = models.DateTimeField(auto_now=True)
 
-
     USERNAME_FIELD = 'user_id' # username, 아이디로 사용할 필드
     REQUIRED_FIELDS = ['nickname', 'email', 'profileImg']
 

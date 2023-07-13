@@ -136,11 +136,45 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static')
+]
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# 미디어
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+
+AUTH_USER_MODEL = 'user.User'
+
+# static 파일
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+
+SOCIALACCOUNT_LOGIN_ON_GET = True # 카카오 로그인 기본 템플릿 없이 바로 이동
+LOGIN_REDIRECT_URL = '/world' # 로그인 후 world 템플릿으로 이동
+LOGOUT_REDIRECT_URL = '/' # 로그아웃 후 메인으로 이동
+LOGIN_URL = '/main' # 로그인 경로
+
+
+# 카카오 로그인
+ACCOUNT_LOGOUT_ON_GET = True
+ACCOUNT_REDIRECT_URL = '/world'
+ACCOUNT_USER_MODEL_USERNAME_FIELD = 'email'
+ACCOUNT_USERNAME_REQUIRED = True
+ACCOUNT_USER_MODEL_EMAIL_FIELD = 'email'
+
+
+# 바로 카카오 로그인 페이지로 넘어가도록
+SOCIALACCOUNT_LOGIN_ON_GET = True
+
+# 로그아웃 완료 후 이동할 템플릿
+ACCOUNT_LOGOUT_REDIRECT_URL = '/'
+# 로그아웃 요청 후 즉시 로그아웃 되도록 (확인 페이지 x)
+ACCOUNT_LOGOUT_ON_GET = True
 # 미디어
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
@@ -178,5 +212,4 @@ ACCOUNT_LOGOUT_ON_GET = True
 #ACCOUNT_UNIQUE_EMAIL = True
 #ACCOUNT_USERNAME_REQUIRED = False
 #ACCOUNT_USER_MODEL_USERNAME_FILED = None
-
 SITE_ID = 1
