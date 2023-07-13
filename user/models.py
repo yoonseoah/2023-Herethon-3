@@ -1,5 +1,4 @@
 from django.db import models
-<<<<<<< HEAD
 from django.contrib.auth.models import BaseUserManager, AbstractBaseUser, PermissionsMixin
 from django.utils import timezone
 
@@ -61,7 +60,3 @@ class User(AbstractBaseUser, PermissionsMixin):
         verbose_name = 'user'
         verbose_name_plural = 'users'
         ordering = ['date_joined']
-=======
-
-# Create your models here.
->>>>>>> 713bf834585d063a0649dcd4c5599f6ec25df72c

@@ -1,6 +1,5 @@
 {% load static %}
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -39,11 +38,29 @@
     <h1>test3 의 indexs.html 파일 </h1>
 
     <ul class="btn btn-light list-inline rating-list">
-        <li onclick="rate(5, {{posts.id}})">
+        <li onclick="rate(5, {{ posts.id }})">
             <i class="fa fa-star {% if post.user_rating > 4 %} checked {% endif %}"></i></li>
     </ul>
 
     <div class="container" style="padding: 2em">
+        <!-- user 정보 불러오기 -->
+        {% block content %}
+            <p>{{ user.nickname }}</p>    <!-- view 부분에 userdatas = User.objects.all() -->
+            <p>{{ user.user_id  }}</p> 
+            <p>{{ user.email   }}</p> 
+            <p>{{ user.pk  }}</p> 
+
+
+            {% for item in userdatas %}
+                <p>{{ user.nickname }}</p>
+            {% endfor %}
+
+            {% for items in user_content %}
+                {{ items.user.nickname }}
+            {% endfor %}
+
+        {% endblock %}
+
         <!-- 여기에 for post in posts 를 %%{} 문으로 넣어서 평균을 구할 수 있는데 그렇게 하면 화면에 안나온다 -->
         {% for post in posts %}
             <div class="card" style="width: 30rem;">
