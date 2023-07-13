@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>detail</title>
+</head>
+<body>
+    <h1> detail.html 파일</h1>
+
+        <p>게시물 번호: {{todo.pk}}</p>
+        <h3>제목: {{todo.title}} </h3>
+        <p>내용: {{todo.content}}</p>
+        <p>생성시간: {{todo.date}}</p>
+        <a href="{% url 'test1:update' todo.pk %}"><button> 수정하기 </button></a>
+        <a href="{% url 'test1:delete' todo.pk %}"><button> 삭제하기 </button></a>
+        <a href="{% url 'index'  %}"><button> 홈으로 </button></a>
+
+        <br/><br/><br/>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2> index.html 파일 </h2>
+
+    <h1>  List </h1>
+    <a href=  "{% url 'test1:create' %}"  >
+        <a href="./create.html">
+        <button> 새 글 등록 </button>
+    </a>
+    <hr>
+        <body>
+            {% for obj in avg %}
+                <p>게시물 번호 : {{obj.pk}}</p>
+                <a href="{% url 'test1:detail' obj.pk %}"><h3> 평균점수 {{obj.avg}}</h3></a>
+                <br/><br/><br/>
+            {% endfor %}
+        </body>
+</body>
+</html> 
+
