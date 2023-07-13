@@ -1,0 +1,13 @@
+<html>
+    <head></head>
+    <body>
+        {% block content %}
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input type="password" placeholder="password" id="pass1" name="password1" value="{{ form.password1.value|default_if_none:'' }}"/>
+            <input type="password" placeholder="re-enter password " id="pass2" name="password2" value="{{ form.password2.value|default_if_none:'' }}"/>
+            <input type="submit" value="변경하기">
+        </form>
+        {% endblock %}
+    </body>
+</html>
