@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/change-my.css' %}">
+
+    <title>changeMyInfo</title>
+</head>
+
+<body>
+{% block content %}
+    <div id="navbar">
+        <button id="back-btn"><img src="{% static 'media/icBack.png' %}" alt=""></button>
+        <span>마이페이지</span>
+        <button id="home-btn"><img src="{% static 'media/icHome.png' %}" alt=""></button>
+    </div>
+
+    <div id="my-main">
+        <div id="profile-div">
+            <div id="pic-container">
+                <img src="{{user.profileImg.url}}" alt="">
+            </div>
+            <form method="post" enctype="multipart/form-data">
+                <div id="edit-pic-container">
+                    <img src="{% static 'media/icEditPic.png' %}" alt="">
+                </div>
+                <button id="save-btn" type="submit">저장하기</button>
+            </form>
+        </div>
+
+        <div id="info-form-div">
+            <h2>개인정보 수정</h2>
+            <form class="input" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <input type="text" placeholder="nickname" id="name" name="nickname" value="{{ form.nickname.value|default_if_none:'' }}"/>
+                <input type="text" placeholder="ID" id="id" name="user_id" value="{{ form.user_id.value|default_if_none:'' }}"/>
+                <input type="email" placeholder="e-mail" id="mail" name="email" value="{{ form.email.value|default_if_none:'' }}"/>
+                <input type="submit" value="변경하기">
+            </form>
+            <p><a href="{% url 'user:change_password' %}">비밀번호 변경하러 가기</a></p>
+        </div>
+    </div>
+{% endblock %}
+
+</body>
+
+</html>

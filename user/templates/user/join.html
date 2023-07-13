@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>회원가입</title>
+        {% load static %}
+        <link href="{% static 'css/join.css' %}" rel="stylesheet" />
+    </head>
+    <body>
+        <div class="join_box">
+            <img src="{% static 'media/back.png' %}" id="back" onclick="goBack()" /><br />
+            <img src="{% static 'media/logo.png' %}" id="logo" />
+            {% block content %}
+            <form class="input" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {% include "user/form_errors.html" %}
+                <input type="text" placeholder="nickname" id="name" name="nickname" value="{{ form.nickname.value|default_if_none:'' }}" />
+                <input type="text" placeholder="ID" id="id" name="user_id" value="{{ form.user_id.value|default_if_none:'' }}"/>
+                <input type="email" placeholder="e-mail" id="mail" name="email" value="{{ form.email.value|default_if_none:'' }}"/>
+                <input type="password" placeholder="password" id="pass1" name="password1" value="{{ form.password1.value|default_if_none:'' }}"/>
+                <input type="password" placeholder="re-enter password " id="pass2" name="password2" value="{{ form.password2.value|default_if_none:'' }}"/>
+                <input type="submit" value="회원가입" id="join" />
+            </form>
+        </div>
+        <script>
+            function goBack() {
+                window.history.back();
+
+            }
+        </script>
+    {% endblock %}
+    </body>
+
+</html>
