@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Review List html 파일이다 </h1>
+    <ul>
+        {% for review in reviews %}
+        <!-- review 모델의 필드 명 star_danger,star_avg 가져오기   -->
+        <li>{{ review.star_danger }} </li>
+
+        
+        <li>{{ review.star_avg }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

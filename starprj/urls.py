@@ -28,6 +28,10 @@ urlpatterns = [
     
     path('ratings/', include('star_ratings.urls', namespace='ratings')),
 
+# 방법 4
+    # path('test4/', include('test4.urls')),
+
+
 # 방법3  위해서 추가 
     path('test3/', include('test3.urls')),
 

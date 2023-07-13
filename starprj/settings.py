@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'star_ratings',     # 별점 python module
     'test3',    # 별점기능... 제발 이번에는.
     
+    'test4', # 별점 기능..
+    
 ]
 
 MIDDLEWARE = [
