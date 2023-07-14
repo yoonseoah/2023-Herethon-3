@@ -3,18 +3,20 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link href="./css/world.css" rel="stylesheet" />
-        <link rel="stylesheet" href="./css/modal.css" />
+        {% load static %}
+        <link href="{% static 'css/world.css' %}" rel="stylesheet" />
+        <link rel="stylesheet" href="{% static 'css/modal.css' %}" />
         <title>지도 보기</title>
     </head>
     <body>
+    {% block content %}
         <header class="nav">
-            <a href="./main.html" id="back"
-                ><img src="./media/back.png" id="back_img"
+            <a href="{% url 'user:main' %}" id="back"
+                ><img src="{% static 'media/back.png' %}" id="back_img"
             /></a>
             <div id="name">별천지</div>
-            <a href="./mypage.html" id="my">
-                <img src="./media/my.png" id="my_img" />
+            <a href="{% url 'user:mypage' %}" id="my">
+                <img src="{% static 'media/my.png' %}" id="my_img" />
             </a>
         </header>
         <div id="map"></div>
@@ -22,7 +24,7 @@
         <div id="modal" class="modal">
             <div class="modal-content">
                 <button id="close-btn">
-                    <img src="media/icClose.png" alt="close-button" />
+                    <img src="{% static 'media/icClose.png' %}" alt="close-button" />
                 </button>
 
                 <div id="header">
@@ -44,6 +46,7 @@
                             <span>총 평점</span><span class="score">0점</span>
                         </div>
                         <form id="star-rating-form" action="">
+                            {{csrf_token}}
                             <fieldset>
                                 <input
                                     type="radio"
@@ -52,7 +55,7 @@
                                     id="rate1"
                                 /><label for="rate1"
                                     ><img
-                                        src="media/icEmptyStar.png"
+                                        src="{% static 'media/icEmptyStar.png' %}"
                                         alt="star"
                                 /></label>
                                 <input
@@ -62,7 +65,7 @@
                                     id="rate2"
                                 /><label for="rate2"
                                     ><img
-                                        src="media/icEmptyStar.png"
+                                        src="{% static 'media/icEmptyStar.png' %}"
                                         alt="star"
                                 /></label>
                                 <input
@@ -72,7 +75,7 @@
                                     id="rate3"
                                 /><label for="rate3"
                                     ><img
-                                        src="media/icEmptyStar.png"
+                                        src="{% static 'media/icEmptyStar.png' %}"
                                         alt="star"
                                 /></label>
                                 <input
@@ -401,11 +404,12 @@
                 </div>
             </div>
         </div>
-        <script defer src="./js/world.js"></script>
+        <script defer src="{% static 'js/world.js' %}"></script>
         <script
             defer
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBPuvRqBorD1IAK4uNuuyfj_PFaEd8rGGA&callback=initMap"
         ></script>
-        <script src="js/mypage-modal.js"></script>
+        <script src="{% static 'js/mypage-modal.js' %}"></script>
+    {% endblock %}
     </body>
 </html>
