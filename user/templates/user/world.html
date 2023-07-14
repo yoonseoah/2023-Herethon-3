@@ -1796,7 +1796,32 @@ function getFoodModal() {
 }
 
 // my-score-div 별점 표시 함수
+    // my-score-div 별점 표시 함수
+$(document).ready(function () {
+    // radio input click event
+    $("input[name='star']").click(function () {
+        var myScore = parseInt($("input[name='star']:checked").val());
+        $("#my-score-value").text(myScore + "점");
+        $("#my-score-data").text(myScore);
+
+        $("input[name='star']").each(function () {
+            var starValue = parseInt($(this).val());
+            if (starValue <= myScore) {
+                $(this)
+                    .siblings("label")
+                    .find("img")
+                    .attr("src", "{% static 'media/icFilledStar.png' %}");
+            } else {
+                $(this)
+                    .siblings("label")
+                    .find("img")
+                    .attr("src", "{% static 'media/icEmptyStar.png' %}");
+            }
+        });
+    });
+});
     </script>
+    
     <script
       defer
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBPuvRqBorD1IAK4uNuuyfj_PFaEd8rGGA&callback=initMap"
