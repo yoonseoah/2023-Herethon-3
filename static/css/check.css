@@ -1,0 +1,107 @@
+@font-face {
+    font-family: "PyeongChangPeace-Bold";
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/PyeongChangPeace-Bold.woff2")
+        format("woff2");
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "PyeongChangPeace-Light";
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/PyeongChangPeace-Light.woff2")
+        format("woff2");
+    font-weight: 300;
+    font-style: normal;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    font-family: "PyeongChangPeace-Light";
+    background-color: #1d0090;
+    margin: 0;
+}
+
+.nav {
+    width: 100%;
+    height: 10vh;
+    margin-top: 0%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #ffe500;
+}
+
+#name {
+    color: #1d0090;
+    text-align: center;
+    margin: 3vh;
+    font-size: 25px;
+    font-family: "PyeongChangPeace-Bold";
+}
+
+#back {
+    margin: 0.8% 0% 0.8% 1%;
+}
+
+#home {
+    margin: 0.8% 1% 0.8% 0%;
+}
+
+#pro {
+    width: 20%;
+    margin: 5% 40% 2% 40%;
+}
+
+.check {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    width: 100%;
+}
+
+#ex {
+    font-size: medium;
+    color: #ffffff;
+    margin-right: 27%;
+    margin-bottom: 0.5%;
+}
+
+#pass {
+    background-color: #ffffff;
+    background-image: url("/media/ch_g.png");
+    background-repeat: no-repeat;
+    background-position: 95%;
+    background-size: 6%;
+    border: none;
+    border-radius: 10px;
+    padding: 1.5%;
+    width: 33%;
+}
+
+#pass::placeholder {
+    font-family: "PyeongChangPeace-Light";
+    font-size: medium;
+}
+
+#fix {
+    background-color: #ffe500;
+    border: none;
+    border-radius: 10px;
+    padding: 0.5%;
+    margin: 2%;
+    font-family: "PyeongChangPeace-Light";
+    font-size: larger;
+    color: #1d0090;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25);
+}
+
+#fix:active {
+    box-shadow: 7px 10px 4px #bfac00 inset;
+}

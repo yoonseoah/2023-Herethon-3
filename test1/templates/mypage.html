@@ -5,22 +5,15 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" type="text/css" href="{% static 'modal.css' %}" />
-        <link rel="stylesheet" type="text/css" href="{% static 'mypage.css' %}" />
+        <link rel="stylesheet" type="text/css" href="{% static 'css/modal.css' %}" />
+        <link rel="stylesheet" type="text/css" href="{% static 'css/mypage.css' %}" />
         <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 
         <title>myPage</title>
     </head>
 
     <body>
-        <!-- 별점 value 값 가져옴.. 전체 입력 값임.  -->
-        {% for review in reviews %}
-        <!-- review 모델의 필드 명 star_danger,star_avg 가져오기   -->
-        <li>{{ review.star_danger }} </li>
 
-        
-        <li>{{ review.star_avg }}</li>
-        {% endfor %}
         
         <div id="navbar">
             <button id="back-btn"><img src="media/icBack.png" alt="" /></button>
@@ -41,6 +34,15 @@
         <div id="cities-div">
             <h2><span id="username">ㅁㅁㅁ</span> 님의 마이페이지</h2>
             <p>내가 평가한 도시</p>
+
+        <!-- 별점 value 값 가져옴.. admin페이지에서 작성된 값. -->
+        {% for review in reviews %}
+        <!-- review 모델의 필드 명 star_danger,star_avg 가져오기   -->
+        <li>{{ review.star_danger }} </li>
+        <li>{{ review.star_avg }}</li>
+        {% endfor %}
+
+
             <div id="city-list-div">
                 <div class="city">
                     <div id="city-flag-container">
@@ -105,6 +107,8 @@
         </div>
 
     <!-- Modal -->
+    <script defer src="{% static 'js/mypage_modal.js' %}"></script>
+    <script defer src="{% static 'js/mypage.js' %}"></script>
         <div class="modal">
             <div class="modal-content">
                 <button id="close-btn">
@@ -132,15 +136,15 @@
                         <form id="star-rating-form" action="">
                             <fieldset>
                                 <input type="radio" name="star" value="1" id="rate1" />
-                                <label for="rate1"><img src="media/icEmptyStar.png" alt="star"/></label>
+                                <label for="rate1"><img src="{% static icEmptyStar.png %}" alt="star"/></label>
                                 <input type="radio" name="star" value="2" id="rate2" />
-                                <label for="rate2" ><img src="media/icEmptyStar.png" alt="star"/></label>
+                                <label for="rate2" ><img src="{% static icEmptyStar.png %}" alt="star"/></label>
                                 <input type="radio" name="star" value="3" id="rate3" />
-                                <label for="rate3"><img src="media/icEmptyStar.png" alt="star"/></label>
+                                <label for="rate3"><img src="{% static icEmptyStar.png %}" alt="star"/></label>
                                 <input type="radio" name="star" value="4" id="rate4" />
-                                <label for="rate4"><img src="media/icEmptyStar.png" alt="star"/></label>
+                                <label for="rate4"><img src="{% static icEmptyStar.png %}" alt="star"/></label>
                                 <input type="radio" name="star" value="5" id="rate5" />
-                                <label for="rate5"><img src="media/icEmptyStar.png" alt="star"/></label>
+                                <label for="rate5"><img src="{% static icEmptyStar.png %}" alt="star"/></label>
                             </fieldset>
                         </form>
                     </div>
@@ -153,23 +157,23 @@
                             <fieldset>
                                 <input type="radio" name="star" value="1" id="rate1" /><label
                                 for="rate1"
-                                ><img src="media/icEmptyStar.png" alt="star"
+                                ><img src="{% static icEmptyStar.png %}" alt="star"
                                 /></label>
                                 <input type="radio" name="star" value="2" id="rate2" /><label
                                 for="rate2"
-                                ><img src="media/icEmptyStar.png" alt="star"
+                                ><img src="{% static icEmptyStar.png %}" alt="star"
                                 /></label>
                                 <input type="radio" name="star" value="3" id="rate3" /><label
                                 for="rate3"
-                                ><img src="media/icEmptyStar.png" alt="star"
+                                ><img src="{% static icEmptyStar.png %}" alt="star"
                                 /></label>
                                 <input type="radio" name="star" value="4" id="rate4" /><label
                                 for="rate4"
-                                ><img src="media/icEmptyStar.png" alt="star"
+                                ><img src="{% static icEmptyStar.png %}" alt="star"
                                 /></label>
                                 <input type="radio" name="star" value="5" id="rate5" /><label
                                 for="rate5"
-                                ><img src="media/icEmptyStar.png" alt="star"
+                                ><img src="{% static icEmptyStar.png %}" alt="star"
                                 /></label>
                             </fieldset>
                         </form>
@@ -291,7 +295,6 @@
             </div>
         </div>
 
-        <script src="{% static 'js/mypage-modal.js' %}"></script>
-        <script src="{% static 'js/mypage.js' %}"></script>
+
     </body>
 </html>

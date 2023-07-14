@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>🌟별천지🌟</title>
+        {% load static %}
+        <link href="{% static 'css/main.css' %}" rel="stylesheet" />
+
+    </head>
+    <body>
+
+        <img src="{% static 'media/main_logo.png' %}" id="logo" />
+        {% block content %}
+        <form class="btn" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {% include "user/form_errors.html" %}
+
+            <a href="{% url 'user:login' %}" id="log">
+
+                <input type="button" class="main_btn" value="로그인" />
+            </a>
+            {% load socialaccount %}
+            <a href="{% provider_login_url 'kakao' %}" id="kakao">
+                <button type="button" class="main_btn">
+                    <div class="kakao_div">
+                        <img src="{% static 'media/kakao.png' %}" id="kakao_logo" />
+
+                        <span id="kakao_text">카카오톡으로 시작하기</span>
+                    </div>
+                </button>
+            </a>
+            <a href="{% url 'user:join' %}" id="join">
+                <input type="button" class="main_btn" value="회원가입"/>
+            </a>
+
+        </form>
+    {% endblock %}
+    </body>
+
+</html>

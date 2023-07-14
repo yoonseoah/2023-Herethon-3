@@ -57,7 +57,11 @@ end
 # Unset irrelevant variables.
 deactivate nondestructive
 
+<<<<<<< HEAD
+set -gx VIRTUAL_ENV 'C:\herethon3\venv'
+=======
 set -gx VIRTUAL_ENV 'C:\Herethon\venv'
+>>>>>>> 713bf834585d063a0649dcd4c5599f6ec25df72c
 
 # https://github.com/fish-shell/fish-shell/issues/436 altered PATH handling
 if test (echo $FISH_VERSION | head -c 1) -lt 3

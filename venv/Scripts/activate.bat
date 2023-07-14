@@ -1,6 +1,10 @@
 @echo off
 
+<<<<<<< HEAD
+set "VIRTUAL_ENV=C:\herethon3\venv"
+=======
 set "VIRTUAL_ENV=C:\Herethon\venv"
+>>>>>>> 713bf834585d063a0649dcd4c5599f6ec25df72c
 
 if defined _OLD_VIRTUAL_PROMPT (
     set "PROMPT=%_OLD_VIRTUAL_PROMPT%"
