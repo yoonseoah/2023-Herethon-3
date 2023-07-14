@@ -43,8 +43,3 @@ const citylist = document.getElementById("city-list-div");
 
 // getUser();
 
-<<<<<<< HEAD
-//내가 평가한 도시
-=======
-//내가 평가한 도시
->>>>>>> 713bf834585d063a0649dcd4c5599f6ec25df72c
