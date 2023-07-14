@@ -91,3 +91,8 @@ def RateList(request):
         "title": "List"
     }
     return render(request, 'example.html', context)
+
+# 테스트
+def reviewTemplates(request):
+    reviews = Review.objects.all()
+    return render(request, 'star_rate.html', {'reviews':reviews})
