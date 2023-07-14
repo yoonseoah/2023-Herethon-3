@@ -1,6 +1,10 @@
-from test5 import views
-from django.urls import path, include
+from test5.views import Rateeee
+from django.urls import path
+
+
 app_name = 'test5'
 
 urlpatterns = [
+    path('', Rateeee, name='rate-movie'),
+
 ]
