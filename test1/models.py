@@ -3,6 +3,8 @@ from django.core.validators import MinValueValidator, MaxValueValidator
 from django.contrib.contenttypes.fields import GenericRelation
 from star_ratings.models import Rating
 
+# 수정 부분
+from user.models import User
 
 # 글자 수 실시간 뜨기 (별점 수 실시간 뜨기로 바꿔야 함)
 # class University(models.Model):
@@ -16,6 +18,8 @@ class Review(models.Model):
     # 자동으로 생성되는 pk값이 있다.
     #user p.k. =           # 사용자 primary key
     #city p.k =            # 도시 primary key
+    # 수정 부분 -> User 연결
+    user = models.ForeignKey(User, on_delete=models.CASCADE, default='')
     star_avg = models.DecimalField(max_digits=4, decimal_places=2)              # 총 평점 별점 소수점 이하 2자리수 까지 저장
     star_danger =  models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(5)])                                          # 치안 별점
     star_price =  models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(5)])                                           # 물가 별점

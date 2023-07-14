@@ -9,7 +9,7 @@ class ReviewForm(forms.ModelForm):
         model = Review
         fields = '__all__'
         widgets = {
-            'star_danger': starWidget,          # 치안 별점
+            #'star_danger': starWidget,          # 치안 별점
             'star_danger_': starWidget,          # 치안 별점
             'star_price': starWidget,           # 물가 별점
             'star_traffic': starWidget,         # 교통 편의성 별점

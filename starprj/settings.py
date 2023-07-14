@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.forms',
 ]
 
 # 로그인
@@ -154,7 +155,7 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 SOCIALACCOUNT_LOGIN_ON_GET = True # 카카오 로그인 기본 템플릿 없이 바로 이동
 LOGIN_REDIRECT_URL = '/world' # 로그인 후 world 템플릿으로 이동
 LOGOUT_REDIRECT_URL = '/' # 로그아웃 후 메인으로 이동
-LOGIN_URL = '/main' # 로그인 경로
+#LOGIN_URL = '/main' # 로그인 경로
 
 
 # 카카오 로그인
@@ -209,4 +210,7 @@ ACCOUNT_LOGOUT_ON_GET = True
 #ACCOUNT_UNIQUE_EMAIL = True
 #ACCOUNT_USERNAME_REQUIRED = False
 #ACCOUNT_USER_MODEL_USERNAME_FILED = None
-SITE_ID = 1
+SITE_ID = 2
+
+# 템플릿
+FORM_RENDERER = 'django.forms.renderers.TemplatesSetting'
