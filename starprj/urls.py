@@ -14,33 +14,20 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
-<<<<<<< Updated upstream
-=======
 
 from django.contrib import admin
->>>>>>> Stashed changes
 from django.urls import include, path
 from test1.views import index
 
 urlpatterns = [
-<<<<<<< Updated upstream
-
-    
-    
-=======
     path('', include('user.urls')),
     path('accounts/', include('allauth.urls')),
     path('admin/', admin.site.urls),
 
->>>>>>> Stashed changes
     path('admin/', admin.site.urls),
     path('test1/', include('test1.urls')),
     
@@ -61,8 +48,4 @@ urlpatterns = [
     # path('', views.index),
 ]
 # + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) # 방법 3 위해서 추가 
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

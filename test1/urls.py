@@ -14,6 +14,7 @@ urlpatterns = [
     path("delete/<int:id>", views.delete, name="delete"),
     path("example/", views.RateList, name="example"),
     path('ratings/', include('star_ratings.urls', namespace='ratings')),
+    path('reviewsTest/', views.reviewTemplates, name='reviewsTest'),
     
     
     

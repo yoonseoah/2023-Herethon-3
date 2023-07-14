@@ -6,7 +6,7 @@ from django.forms.widgets import Widget
     
 class starWidget(forms.TextInput):
     input_type = 'rating'
-    # template_name =  "widgets/star_rate.html"
+    #template_name =  "widgets/star_rate.html"
     template_name =  "star_rate.html"
 
     class Media:
@@ -25,7 +25,7 @@ class starWidget(forms.TextInput):
         attrs.update({
             'min': 0,       # 최소 별 개수
             'max': 5,       # 최대 별 개수
-            'step': 0,      # 0으로 하면 0.5단위, 1로 하면 1 단위
+            'step': 1,      # 0으로 하면 0.5단위, 1로 하면 1 단위
         })
         return attrs
     
