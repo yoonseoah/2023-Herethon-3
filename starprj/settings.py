@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'test3',
     'test4',
     'test5',
+    'test6',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
