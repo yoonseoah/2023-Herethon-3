@@ -210,7 +210,8 @@ ACCOUNT_LOGOUT_ON_GET = True
 #ACCOUNT_UNIQUE_EMAIL = True
 #ACCOUNT_USERNAME_REQUIRED = False
 #ACCOUNT_USER_MODEL_USERNAME_FILED = None
-SITE_ID = 2
+# SITE_ID = 2   
+SITE_ID = 3     # 카카오로그인 위해서 
 
 # 템플릿
 FORM_RENDERER = 'django.forms.renderers.TemplatesSetting'
