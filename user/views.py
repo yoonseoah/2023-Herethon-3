@@ -30,7 +30,7 @@ def join(request):
             if user is not None:
                 login(request, user)
             user_account.save()
-            return redirect('user/world.html') # 회원가입 후 메인으로 이동
+            return redirect('/world') # 회원가입 후 메인으로 이동
     else:
         form = UserForm()
     return render(request, 'user/join.html', {'form':form})
